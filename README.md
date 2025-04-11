@@ -1,3 +1,3 @@
-# Gravitation-Model calculates trajectory of a body in gravitational field with given initial conditions 
+Gravitation model calculates trajectory of a body in gravitational field with given initial conditions 
 Open main.py. At the start of the code choose desired initial condiditions e.g. start_point = (-400,-600), start_velocity = (2,7), mass = 2e14, dt = 0.05, limit_t = 10000, sampling = 100, isOrbital = False and factor = 1. When you run the code it will show a plot of the trajectory in your browser.
 isOrbital automatically sets up start_velocity as perpendicular to the diameter and speed to the orbital speed. This can be changed with changing the factor coefficient to somewhere between 1 and sqrt(2). This causes the orbit to become eliptical.
