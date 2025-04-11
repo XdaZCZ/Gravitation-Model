@@ -1,7 +1,7 @@
 import math as mt
 
 
-def multiply(coef: int, vector: list) -> list:
+def multiply(coef: float, vector: list) -> list:
     return [coef * vector[0], coef * vector[1]]
 
 
@@ -35,10 +35,12 @@ def sort(list_: list) -> list:
     return [x_list, y_list]
 
 
-def velocity(time_step: int, grav_parameter: int, point: list, vel_now: list) -> list:
-    epsilon = 1 / mt.sqrt(pow(point[0], 2) + pow(point[1], 2))
-    sn = multiply(epsilon, [-point[0], -point[1]])
-    ac = grav_parameter * pow(epsilon, 2)
+def velocity(
+    time_step: float, grav_parameter: float, point: list, vel_now: list
+) -> list:
+    r = 1 / mt.sqrt(pow(point[0], 2) + pow(point[1], 2))
+    sn = multiply(r, [-point[0], -point[1]])
+    ac = grav_parameter * pow(r, 2)
     ac_vec = multiply(ac, sn)
     if isLarge(vel_now, 10000000):
         return vel_now
@@ -46,5 +48,5 @@ def velocity(time_step: int, grav_parameter: int, point: list, vel_now: list) ->
         return add(multiply(time_step, ac_vec), vel_now)
 
 
-def point_calc(time_step: int, point: list, vel_now: list) -> list:
+def point_calc(time_step: float, point: list, vel_now: list) -> list:
     return add(multiply(time_step, vel_now), point)
