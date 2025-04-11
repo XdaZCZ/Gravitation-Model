@@ -15,7 +15,7 @@ factor = 1  # a coefficient for orbital speed
 
 # calculated constants
 grav_parameter = mass * gravitational_constant  # meter cubed per second squared
-r_0 = 1 / mt.sqrt(pow(start_point[0], 2) + pow(start_point[1], 2))
+r_0 = 1 / mt.sqrt(pow(start_point[0], 2) + pow(start_point[1], 2)) # inverse radius in time t=0
 orbital_speed = mt.sqrt(grav_parameter * r_0)
 orbital_vel = ms.multiply(
     orbital_speed * r_0,
